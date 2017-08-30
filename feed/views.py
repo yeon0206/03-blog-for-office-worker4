@@ -1,9 +1,12 @@
 from django.shortcuts import render
-
+from .models import Article,Comment,HashTag
 # Create your views here.
 
 def index(request):
-    pass
+    
+    ctx={
+    }
+    return render(request, "index.html", ctx )
 
 def detail(request):
     pass
