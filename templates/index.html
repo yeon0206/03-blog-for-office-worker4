@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="blog-header">
-    <h1 class="blog-title">HowDoILook?</h1>
+    <h1 class="blog-title"><strong>HowDo.I.Look?</strong></h1>
     <p class="lead blog-description">Do you notice anything different about me?</p>
   </div>
   <div class="row">
@@ -27,14 +27,20 @@
     </div>
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
       <div class="sidebar-module">
+        <h4>Categories</h4>
+          <ol class="list-unstyled">
+          {% for alias, category in category_list %}
+          <li>{{ category }}</li>
+          {% endfor %}
+          </ol>
+      </div>
+      <div class="sidebar-module">
         <h4>Hashtags</h4>
           <ol class="list-unstyled">
           {% for hashtag in hashtag_list %}
           <li>#{{ hashtag }}</li>
           {% endfor %}
           </ol>
-      </div>
-      <div class="sidebar-module">
       </div>
     </div>
   </div>
