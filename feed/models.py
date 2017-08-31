@@ -37,7 +37,11 @@ class Article(AddTime):
         return self.title
 
 class Comment(AddTime):
-    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    article = models.ForeignKey(
+        Article,
+        related_name="article_comments", #아티클에서 커멘트로 접근할때
+        on_delete=models.CASCADE
+        )
     username = models.CharField(max_length=50)
     content = models.CharField(max_length=200)
     public = models.BooleanField(default=False)
