@@ -22,6 +22,7 @@ class Article(AddTime):
         (PERSONAL, "personal"),
     )
     title = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=200)
     content = models.TextField()
     category = models.CharField(
         max_length = 2,
@@ -42,9 +43,9 @@ class Comment(AddTime):
         related_name="article_comments", #아티클에서 커멘트로 접근할때
         on_delete=models.CASCADE
         )
+    public = models.BooleanField(default=False)
     username = models.CharField(max_length=50)
     content = models.CharField(max_length=200)
-    public = models.BooleanField(default=False)
 
     def __str__(self):
         return "{}   Re:  {}".format(self.article.title, self.content)
