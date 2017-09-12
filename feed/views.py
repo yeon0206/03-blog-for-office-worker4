@@ -59,6 +59,7 @@ def detail(request, article_id):
 
     # 두번째 방법:
     comment_list = article.article_comments.filter(public=True)
+        # comment_list = article.article_comments.all()
         # 문제가있음, article에서 comment로 접근을 할수가 없음
         # 그래서 comment 인스턴스에 접근코드를 작성해줘야함(related_name)
 
