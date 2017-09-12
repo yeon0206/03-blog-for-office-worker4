@@ -20,11 +20,11 @@
         <p>{{ article.content|linebreaks }}</p>
         <div>{{ article.posted_at }}</div>
         <div>
-          {% for comment in article.article_comments.all %}
+          {% for comment in comment_list %}
             <div>{{ comment.username }} : {{ comment.content }}</div>
           {% endfor %}
         </div>
-      </div>
+
 
       <div class="reply-form">
         <form method="post" action="">
